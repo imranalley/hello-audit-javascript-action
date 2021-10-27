@@ -1,0 +1,24 @@
+{
+  "name": "hello-audit-javascript-action",
+  "version": "1.0.0",
+  "description": "testing an audit action",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/imranalley/hello-audit-javascript-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imranalley/hello-audit-javascript-action/issues"
+  },
+  "homepage": "https://github.com/imranalley/hello-audit-javascript-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0"
+  }
+}
