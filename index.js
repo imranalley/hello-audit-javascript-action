@@ -19,10 +19,10 @@ function convertToCSV(objArray) {
   return str;
 }
 
-function exportCSVFile(headers, items, fileTitle) {
-  if (headers) {
-      items.unshift(headers);
-  }
+function exportCSVFile(items, fileTitle) {
+  // if (headers) {
+  //     items.unshift(headers);
+  // }
 
   // Convert Object to JSON
   var jsonObject = JSON.stringify(items);
