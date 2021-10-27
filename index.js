@@ -12,9 +12,23 @@ try {
   // TODO add a parser script that converts to csv
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+  
+  const options = { 
+    fieldSeparator: ',',
+    quoteStrings: '"',
+    decimalSeparator: '.',
+    showLabels: true, 
+    showTitle: true,
+    title: 'test',
+    useTextFile: false,
+    useBom: true,
+    useKeysAsHeaders: true,
+    // headers: ['Column 1', 'Column 2', etc...] <-- Won't work with useKeysAsHeaders present!
+  };
 
   const csvExport = new ExportToCsv(options);
   csvExport.generateCsv(payload);
+  
 } catch (error) {
   core.setFailed(error.message);
 }
