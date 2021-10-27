@@ -12,7 +12,31 @@ try {
   // TODO add a parser script that converts to csv
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
-  
+ 
+  var data = [
+    {
+      name: 'Test 1',
+      age: 13,
+      average: 8.2,
+      approved: true,
+      description: "using 'Content here, content here' "
+    },
+    {
+      name: 'Test 2',
+      age: 11,
+      average: 8.2,
+      approved: true,
+      description: "using 'Content here, content here' "
+    },
+    {
+      name: 'Test 4',
+      age: 10,
+      average: 8.2,
+      approved: true,
+      description: "using 'Content here, content here' "
+    },
+  ];
+
   const options = { 
     fieldSeparator: ',',
     quoteStrings: '"',
@@ -27,7 +51,7 @@ try {
   };
 
   const csvExport = new ExportToCsv(options);
-  csvExport.generateCsv(payload);
+  csvExport.generateCsv(data);
   
 } catch (error) {
   core.setFailed(error.message);
