@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+import { ExportToCsv } from 'export-to-csv';
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -11,6 +12,9 @@ try {
   // TODO add a parser script that converts to csv
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+
+  const csvExport = new ExportToCsv(options);
+  csvExport.generateCsv(payload);
 } catch (error) {
   core.setFailed(error.message);
 }

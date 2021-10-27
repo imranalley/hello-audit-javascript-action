@@ -19,6 +19,7 @@
   "homepage": "https://github.com/imranalley/hello-audit-javascript-action#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^5.0.0",
+    "export-to-csv": "^0.2.1"
   }
 }
