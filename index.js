@@ -59,7 +59,8 @@ try {
   // TODO add a parser script that converts to csv
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
-  exportCSVFile(payload, test)
+  var fileTile = 'test';
+  exportCSVFile(payload, fileTile)
 
 } catch (error) {
   core.setFailed(error.message);
