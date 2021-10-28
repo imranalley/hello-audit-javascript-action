@@ -16,11 +16,16 @@ on:
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      #audit
-      - uses: svanboxel/org-audit-action@master
+      - name: Hello world action step
+        id: hello
+        uses: imranalley/hello-audit-javascript-action@master
         with:
-          organization: 'imranalley'
-          token: ${{ secrets.GIT_TOKEN }}
-          issue: true
-          samlIdentities: true 
+          who-to-greet: 'Steph Curry'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      # ls
+      - name: list all files and folders
+        run: ls -a

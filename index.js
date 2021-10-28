@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-import { ExportToCsv } from 'export-to-csv';
+const { JSONtoCSV } = require("./utils")
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -13,45 +13,8 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
  
-  var data = [
-    {
-      name: 'Test 1',
-      age: 13,
-      average: 8.2,
-      approved: true,
-      description: "using 'Content here, content here' "
-    },
-    {
-      name: 'Test 2',
-      age: 11,
-      average: 8.2,
-      approved: true,
-      description: "using 'Content here, content here' "
-    },
-    {
-      name: 'Test 4',
-      age: 10,
-      average: 8.2,
-      approved: true,
-      description: "using 'Content here, content here' "
-    },
-  ];
+  const csv = JSONtoCSV(payload)
 
-  const options = { 
-    fieldSeparator: ',',
-    quoteStrings: '"',
-    decimalSeparator: '.',
-    showLabels: true, 
-    showTitle: true,
-    title: 'test',
-    useTextFile: false,
-    useBom: true,
-    useKeysAsHeaders: true,
-    // headers: ['Column 1', 'Column 2', etc...] <-- Won't work with useKeysAsHeaders present!
-  };
-
-  const csvExport = new ExportToCsv(options);
-  csvExport.generateCsv(data);
   
 } catch (error) {
   core.setFailed(error.message);
