@@ -16,11 +16,11 @@ on:
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
-    - name: Membership Audit Log Action
-      uses: svanboxel/org-audit-action@v1
-      with:
-        organization: 'imranalley'
-        token: ${{ secrets.GIT_TOKEN }}
-        issue: true
-        samlIdentities: true 
+    steps:
+      #audit
+      - uses: svanboxel/org-audit-action@v1
+        with:
+          organization: 'imranalley'
+          token: ${{ secrets.GIT_TOKEN }}
+          issue: true
+          samlIdentities: true 
