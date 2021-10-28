@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       #audit
-      - uses: svanboxel/org-audit-action@v1
+      - uses: svanboxel/org-audit-action@master
         with:
           organization: 'imranalley'
           token: ${{ secrets.GIT_TOKEN }}
