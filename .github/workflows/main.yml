@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ dev ]
+    branches: [ auditorg ]
   pull_request:
-    branches: [ dev ]
+    branches: [ auditorg ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,15 +17,10 @@ jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
-    steps:
-      - name: Hello world action step
-        id: hello
-        uses: imranalley/hello-audit-javascript-action@master
-        with:
-          who-to-greet: 'Steph Curry'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
-      # ls
-      - name: list all files and folders
-        run: ls -a
+    - name: Membership Audit Log Action
+      uses: svanboxel/org-audit-action@v1
+      with:
+        organization: 'imranalley'
+        token: ${{ secrets.GIT_TOKEN }}
+        issue: true
+        samlIdentities: true 
