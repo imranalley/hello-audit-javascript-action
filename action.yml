@@ -6,9 +6,9 @@ inputs:
     required: true
     default: 'World'
   url: # add url
-    description: 'url to hit for audit'
+    description: 'url endpoint to hit for audit'
     required: true
-    default: https://api.github.com/user
+    default: https://api.github.com
 outputs:
   time: # id of output
     description: 'The time we greeted you'

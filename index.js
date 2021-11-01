@@ -13,7 +13,7 @@ try {
 
   const config = {
     method: 'get',
-    url: `${url}`,
+    url: `${url}/user`,
     headers: {
       'Authorization': `token ${creds}`
     }
