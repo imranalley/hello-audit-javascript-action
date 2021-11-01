@@ -1,8 +1,8 @@
 name: 'Hello Audit'
 description: 'Use the GitHub APIs to audit your team and org permissions'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  creds:  # id of input
+    description: 'creds for GitHub'
     required: true
     default: 'World'
 outputs:
