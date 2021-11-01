@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Run Audit API
         id: audit
-        uses: imranalley/hello-audit-javascript-action@master
+        uses: imranalley/hello-audit-javascript-action@auditorg
         with:
           creds: ${{ secrets.GIT_TOKEN }}
       # Use the output from the `hello` step
