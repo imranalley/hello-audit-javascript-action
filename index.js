@@ -12,7 +12,7 @@ try {
 
   const config = {
     method: 'get',
-    url: 'https://api.github.com/user',
+    url: `${url}`,
     headers: {
       'Authorization': `token ${creds}`
     }

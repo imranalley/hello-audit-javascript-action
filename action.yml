@@ -5,6 +5,10 @@ inputs:
     description: 'creds for GitHub'
     required: true
     default: 'World'
+  url:
+    description: 'url to hit for audit'
+    required: true
+    default: https://api.github.com/user
 outputs:
   time: # id of output
     description: 'The time we greeted you'
