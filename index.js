@@ -44,8 +44,11 @@ try {
     `${DATA_FOLDER}/${ARTIFACT_FILE_NAME}.json`,
     JSON.stringify(json)
   );
+
+  console.log('testing writefile');
   await writeFileAsync(`${DATA_FOLDER}/${ARTIFACT_FILE_NAME}.csv`, csv);
 
+  console.log('create and upload artifacts');
   await createandUploadArtifacts();
   
 } catch (error) {
