@@ -8,6 +8,7 @@ const fs = require('fs')
 try {
   // `who-to-greet` input defined in action metadata file
   const creds = core.getInput('creds');
+  const url = core.getInput('url');
   // run api call
 
   const config = {

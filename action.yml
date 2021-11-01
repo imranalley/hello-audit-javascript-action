@@ -5,7 +5,7 @@ inputs:
     description: 'creds for GitHub'
     required: true
     default: 'World'
-  url:
+  url: # add url
     description: 'url to hit for audit'
     required: true
     default: https://api.github.com/user
