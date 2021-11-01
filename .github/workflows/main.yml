@@ -16,13 +16,13 @@ on:
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Run an Audit
     steps:
-      - name: Hello world action step
-        id: hello
+      - name: Run Audit API
+        id: audit
         uses: imranalley/hello-audit-javascript-action@master
         with:
-          who-to-greet: 'Steph Curry'
+          creds: ${{ secrets.GIT_TOKEN }}
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
