@@ -39,19 +39,19 @@ const GET_USER = `
 }
 `;
 
-const axiosGitHubGraphQL = axios.create({
-  baseURL: 'https://api.github.com/graphql',
-  headers: {
-  'Authorization': `token ${creds}`
-  }
-});
+
 
 try {
   // `who-to-greet` input defined in action metadata file
   const creds = core.getInput('creds');
   const url = core.getInput('url');
   // run api call
-
+  const axiosGitHubGraphQL = axios.create({
+    baseURL: 'https://api.github.com/graphql',
+    headers: {
+    'Authorization': `token ${creds}`
+    }
+  });
   // const config = {
   //   method: 'get',
   //   url: `${url}/user`,
